@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Practice coding problems organized by topic – Arrays, Strings, Linked Lists, Trees, Graphs at RIT CodingHub.">
+  <title>Practice Problems – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="learning.html">Learning Paths</a>
+        <a href="practice.html" class="active">Practice</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="events.html">Events</a>
+        <a href="projects.html">Projects</a>
+        <a href="community.html">Community</a>
+        <a href="resources.html">Resources</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search topics..." autocomplete="off">
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-code"></i> Practice Problems</h1>
+      <p>Sharpen your skills with curated coding challenges.</p>
+    </div>
+  </section>
+
+  <!-- Problems List View -->
+  <section class="page-content" id="problemsListView">
+    <div class="container">
+      <div class="filter-tabs mb-3">
+        <button class="filter-tab active" data-topic="all">All Topics</button>
+        <button class="filter-tab" data-topic="arrays">Arrays</button>
+        <button class="filter-tab" data-topic="strings">Strings</button>
+        <button class="filter-tab" data-topic="linkedlists">Linked Lists</button>
+        <button class="filter-tab" data-topic="trees">Trees</button>
+        <button class="filter-tab" data-topic="graphs">Graphs</button>
+      </div>
+
+      <!-- Arrays -->
+      <div class="topic-section" data-topic-section="arrays">
+        <h3><span class="topic-icon">📦</span> Arrays</h3>
+        <div class="problem-card" data-problem="twosum">
+          <div class="problem-info">
+            <div class="problem-num">1</div>
+            <div>
+              <h4>Two Sum</h4>
+              <div class="problem-topic">Arrays</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-easy">Easy</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('twosum')">Solve</button>
+          </div>
+        </div>
+        <div class="problem-card" data-problem="maxsubarray">
+          <div class="problem-info">
+            <div class="problem-num">2</div>
+            <div>
+              <h4>Maximum Subarray</h4>
+              <div class="problem-topic">Arrays</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-medium">Medium</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('maxsubarray')">Solve</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Strings -->
+      <div class="topic-section" data-topic-section="strings">
+        <h3><span class="topic-icon">🔤</span> Strings</h3>
+        <div class="problem-card" data-problem="longestpalindrome">
+          <div class="problem-info">
+            <div class="problem-num">3</div>
+            <div>
+              <h4>Longest Palindrome</h4>
+              <div class="problem-topic">Strings</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-medium">Medium</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('longestpalindrome')">Solve</button>
+          </div>
+        </div>
+        <div class="problem-card" data-problem="validanagram">
+          <div class="problem-info">
+            <div class="problem-num">4</div>
+            <div>
+              <h4>Valid Anagram</h4>
+              <div class="problem-topic">Strings</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-easy">Easy</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('validanagram')">Solve</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Linked Lists -->
+      <div class="topic-section" data-topic-section="linkedlists">
+        <h3><span class="topic-icon">🔗</span> Linked Lists</h3>
+        <div class="problem-card" data-problem="reverselinkedlist">
+          <div class="problem-info">
+            <div class="problem-num">5</div>
+            <div>
+              <h4>Reverse Linked List</h4>
+              <div class="problem-topic">Linked Lists</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-easy">Easy</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('reverselinkedlist')">Solve</button>
+          </div>
+        </div>
+        <div class="problem-card" data-problem="detectcycle">
+          <div class="problem-info">
+            <div class="problem-num">6</div>
+            <div>
+              <h4>Detect Cycle</h4>
+              <div class="problem-topic">Linked Lists</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-medium">Medium</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('detectcycle')">Solve</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Trees -->
+      <div class="topic-section" data-topic-section="trees">
+        <h3><span class="topic-icon">🌳</span> Trees</h3>
+        <div class="problem-card" data-problem="levelorder">
+          <div class="problem-info">
+            <div class="problem-num">7</div>
+            <div>
+              <h4>Level Order Traversal</h4>
+              <div class="problem-topic">Trees</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-medium">Medium</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('levelorder')">Solve</button>
+          </div>
+        </div>
+        <div class="problem-card" data-problem="maxdepth">
+          <div class="problem-info">
+            <div class="problem-num">8</div>
+            <div>
+              <h4>Maximum Depth</h4>
+              <div class="problem-topic">Trees</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-easy">Easy</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('maxdepth')">Solve</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Graphs -->
+      <div class="topic-section" data-topic-section="graphs">
+        <h3><span class="topic-icon">🕸️</span> Graphs</h3>
+        <div class="problem-card" data-problem="shortestpath">
+          <div class="problem-info">
+            <div class="problem-num">9</div>
+            <div>
+              <h4>Shortest Path</h4>
+              <div class="problem-topic">Graphs</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-hard">Hard</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('shortestpath')">Solve</button>
+          </div>
+        </div>
+        <div class="problem-card" data-problem="numislands">
+          <div class="problem-info">
+            <div class="problem-num">10</div>
+            <div>
+              <h4>Number of Islands</h4>
+              <div class="problem-topic">Graphs</div>
+            </div>
+          </div>
+          <div class="problem-actions">
+            <span class="badge badge-medium">Medium</span>
+            <button class="btn btn-primary btn-sm" onclick="openProblem('numislands')">Solve</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Problem Detail View -->
+  <section class="page-content" id="problemDetailView" style="display:none;">
+    <div class="container" style="max-width:900px;">
+      <div class="module-breadcrumb">
+        <a href="practice.html">Practice</a> <i class="fas fa-chevron-right"></i> <span
+          id="problemTopicBreadcrumb"></span> <i class="fas fa-chevron-right"></i> <span
+          id="problemNameBreadcrumb"></span>
+      </div>
+      <div class="problem-detail-header">
+        <div class="flex items-center gap-2 mb-2">
+          <span id="problemBadge" class="badge"></span>
+        </div>
+        <h1 id="problemTitle"></h1>
+        <p id="problemDesc" style="color:var(--text-secondary); margin-top:12px; line-height:1.8;"></p>
+      </div>
+
+      <div class="content-block">
+        <h3>Example</h3>
+        <div id="problemExample"></div>
+      </div>
+
+      <div class="code-editor">
+        <div class="code-editor-header">
+          <div class="dots"><span></span><span></span><span></span></div>
+          <span class="lang-label">solution.py</span>
+        </div>
+        <textarea id="codeArea" placeholder="# Write your solution here..."></textarea>
+        <div class="code-editor-footer">
+          <button class="btn btn-secondary btn-sm" onclick="document.getElementById('codeArea').value=''"><i
+              class="fas fa-undo"></i> Reset</button>
+          <button class="run-btn" onclick="runCode()"><i class="fas fa-play"></i> Run Code</button>
+        </div>
+      </div>
+
+      <div id="codeOutput" class="content-block" style="display:none;">
+        <h3>Output</h3>
+        <div class="code-block"><code id="outputText"></code></div>
+      </div>
+
+      <div class="mt-3">
+        <button class="btn btn-secondary" onclick="backToProblems()"><i class="fas fa-arrow-left"></i> Back to
+          Problems</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Community discussions at RIT CodingHub – ask questions, share resources, discuss tech.">
+  <title>Community – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div><span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+          href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a><a href="projects.html">Projects</a><a
+          href="community.html" class="active">Community</a><a href="resources.html">Resources</a><a
+          href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search"><i class="fas fa-search search-icon"></i><input type="text" id="searchInput"
+            placeholder="Search topics..." autocomplete="off"></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-comments"></i> Community</h1>
+      <p>Ask questions, share knowledge, and connect with fellow coders.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container" style="max-width:900px;">
+      <!-- New Post Form -->
+      <div class="form-card mb-4 fade-in">
+        <h3><i class="fas fa-pen"></i> Start a Discussion</h3>
+        <div class="form-group">
+          <label for="postTitle">Title</label>
+          <input type="text" id="postTitle" placeholder="What's on your mind?">
+        </div>
+        <div class="form-group">
+          <label for="postContent">Details</label>
+          <textarea id="postContent" placeholder="Describe your question or share something..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="postTags">Tags (comma-separated)</label>
+          <input type="text" id="postTags" placeholder="python, algorithms, help">
+        </div>
+        <button class="btn btn-primary" onclick="addPost()"><i class="fas fa-paper-plane"></i> Post</button>
+      </div>
+
+      <!-- Posts -->
+      <div id="postsContainer">
+        <div class="post-card fade-in">
+          <div class="post-header">
+            <div class="post-avatar">AK</div>
+            <div class="post-author">
+              <h4>Arun Kumar</h4>
+              <span>2 hours ago</span>
+            </div>
+          </div>
+          <div class="post-body">
+            <h3>Tips for mastering Dynamic Programming?</h3>
+            <p>I've been struggling with DP problems lately. Can anyone share their approach to identifying subproblems
+              and building solutions from the bottom up? Any recommended resources would also be helpful.</p>
+          </div>
+          <div class="post-tags">
+            <span>#algorithms</span><span>#dp</span><span>#help</span>
+          </div>
+          <div class="post-footer">
+            <button class="post-action" onclick="likePost(this)"><i class="fas fa-heart"></i> <span>24</span></button>
+            <button class="post-action" onclick="toggleReplies(this)"><i class="fas fa-comment"></i>
+              <span>3</span></button>
+            <button class="post-action"><i class="fas fa-share"></i> Share</button>
+          </div>
+          <div class="replies-section" style="display:none;">
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">SP</div><strong>Sneha Priya</strong><span>1 hour ago</span>
+              </div>
+              <p>Start with simple problems on LeetCode and practice the top patterns: fibonacci, knapsack, LIS, and
+                interval scheduling. Once you see the pattern, DP becomes much easier!</p>
+            </div>
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">RV</div><strong>Rahul Vijay</strong><span>45 min ago</span>
+              </div>
+              <p>I recommend the "Dynamic Programming Patterns" article on GeeksforGeeks. Also try solving problems by
+                first writing the recursive solution, then memoizing it.</p>
+            </div>
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">DM</div><strong>Deepika Mohan</strong><span>30 min ago</span>
+              </div>
+              <p>Practice is key! I solved around 50 DP problems and it started clicking. Also, draw the recursion tree
+                – it really helps visualize overlapping subproblems.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-in">
+          <div class="post-header">
+            <div class="post-avatar">SP</div>
+            <div class="post-author">
+              <h4>Sneha Priya</h4>
+              <span>5 hours ago</span>
+            </div>
+          </div>
+          <div class="post-body">
+            <h3>Just completed my first React project! 🎉</h3>
+            <p>After finishing the Frontend Development path on this platform, I built a complete weather app using
+              React.js and the OpenWeather API. Feeling accomplished! Has anyone else built projects after completing a
+              learning path?</p>
+          </div>
+          <div class="post-tags">
+            <span>#react</span><span>#frontend</span><span>#project</span><span>#milestone</span>
+          </div>
+          <div class="post-footer">
+            <button class="post-action" onclick="likePost(this)"><i class="fas fa-heart"></i> <span>47</span></button>
+            <button class="post-action" onclick="toggleReplies(this)"><i class="fas fa-comment"></i>
+              <span>2</span></button>
+            <button class="post-action"><i class="fas fa-share"></i> Share</button>
+          </div>
+          <div class="replies-section" style="display:none;">
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">KS</div><strong>Karthik Subramani</strong><span>4 hours ago</span>
+              </div>
+              <p>Congrats! I built a to-do app and then a movie search app. Building projects really solidifies the
+                concepts. Would love to see yours!</p>
+            </div>
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">NR</div><strong>Nithya Ramesh</strong><span>3 hours ago</span>
+              </div>
+              <p>Amazing work Sneha! I'm currently working through the same path. Can you share your GitHub repo? Would
+                love to use it as reference.</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-in">
+          <div class="post-header">
+            <div class="post-avatar">VG</div>
+            <div class="post-author">
+              <h4>Vishnu Ganesh</h4>
+              <span>1 day ago</span>
+            </div>
+          </div>
+          <div class="post-body">
+            <h3>Best resources for learning Machine Learning?</h3>
+            <p>I want to start ML but I'm overwhelmed with the choices. Should I start with Andrew Ng's course, or jump
+              straight into hands-on projects with scikit-learn? Any advice?</p>
+          </div>
+          <div class="post-tags">
+            <span>#machinelearning</span><span>#python</span><span>#resources</span>
+          </div>
+          <div class="post-footer">
+            <button class="post-action" onclick="likePost(this)"><i class="fas fa-heart"></i> <span>31</span></button>
+            <button class="post-action" onclick="toggleReplies(this)"><i class="fas fa-comment"></i>
+              <span>1</span></button>
+            <button class="post-action"><i class="fas fa-share"></i> Share</button>
+          </div>
+          <div class="replies-section" style="display:none;">
+            <div class="reply">
+              <div class="reply-header">
+                <div class="reply-avatar">PS</div><strong>Preethi Selvam</strong><span>20 hours ago</span>
+              </div>
+              <p>Start with Andrew Ng's course for theory, then use the ML learning path here on RIT CodingHub for
+                hands-on Python exercises. That combo worked great for me!</p>
+            </div>
+          </div>
+        </div>
+
+        <div class="post-card fade-in">
+          <div class="post-header">
+            <div class="post-avatar">MJ</div>
+            <div class="post-author">
+              <h4>Manoj Jayaram</h4>
+              <span>2 days ago</span>
+            </div>
+          </div>
+          <div class="post-body">
+            <h3>Free coding tools every student should know about</h3>
+            <p>Here's a list of tools I found useful: VS Code (editor), GitHub Student Pack (free tools), Replit (online
+              IDE), Notion (notes), and Excalidraw (diagramming). What other tools do you all use?</p>
+          </div>
+          <div class="post-tags">
+            <span>#tools</span><span>#productivity</span><span>#resources</span>
+          </div>
+          <div class="post-footer">
+            <button class="post-action" onclick="likePost(this)"><i class="fas fa-heart"></i> <span>56</span></button>
+            <button class="post-action" onclick="toggleReplies(this)"><i class="fas fa-comment"></i>
+              <span>0</span></button>
+            <button class="post-action"><i class="fas fa-share"></i> Share</button>
+          </div>
+          <div class="replies-section" style="display:none;"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

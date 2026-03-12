@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Curated learning resources for programming, data science, web dev, and more at RIT CodingHub.">
+  <title>Resources – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div><span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+          href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a><a href="projects.html">Projects</a><a
+          href="community.html">Community</a><a href="resources.html" class="active">Resources</a><a
+          href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search"><i class="fas fa-search search-icon"></i><input type="text" id="searchInput"
+            placeholder="Search topics..." autocomplete="off"></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-book-open"></i> Resources</h1>
+      <p>Curated links, tutorials, and tools to accelerate your learning.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <!-- Programming Languages -->
+      <div class="resource-category fade-in">
+        <h3><span>💻</span> Programming Languages</h3>
+        <div class="resource-list">
+          <a href="https://docs.python.org/3/" target="_blank" class="resource-item">
+            <div class="res-icon">🐍</div>
+            <div>
+              <h4>Python Documentation</h4>
+              <p>Official Python 3 docs & tutorials</p>
+            </div>
+          </a>
+          <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript" target="_blank" class="resource-item">
+            <div class="res-icon">🟨</div>
+            <div>
+              <h4>JavaScript (MDN)</h4>
+              <p>Comprehensive JS reference</p>
+            </div>
+          </a>
+          <a href="https://docs.oracle.com/javase/tutorial/" target="_blank" class="resource-item">
+            <div class="res-icon">☕</div>
+            <div>
+              <h4>Java Tutorials</h4>
+              <p>Oracle's official Java tutorials</p>
+            </div>
+          </a>
+          <a href="https://cplusplus.com/doc/tutorial/" target="_blank" class="resource-item">
+            <div class="res-icon">⚙️</div>
+            <div>
+              <h4>C++ Tutorial</h4>
+              <p>Learn C++ from basics to advanced</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Data Structures & Algorithms -->
+      <div class="resource-category fade-in">
+        <h3><span>🧮</span> Data Structures & Algorithms</h3>
+        <div class="resource-list">
+          <a href="https://visualgo.net/" target="_blank" class="resource-item">
+            <div class="res-icon">📊</div>
+            <div>
+              <h4>VisuAlgo</h4>
+              <p>Visualize DS & algorithms step by step</p>
+            </div>
+          </a>
+          <a href="https://leetcode.com/problemset/all/" target="_blank" class="resource-item">
+            <div class="res-icon">🏋️</div>
+            <div>
+              <h4>LeetCode</h4>
+              <p>Practice interview problems</p>
+            </div>
+          </a>
+          <a href="https://www.geeksforgeeks.org/data-structures/" target="_blank" class="resource-item">
+            <div class="res-icon">📗</div>
+            <div>
+              <h4>GeeksforGeeks DS</h4>
+              <p>Data structures articles & problems</p>
+            </div>
+          </a>
+          <a href="https://cp-algorithms.com/" target="_blank" class="resource-item">
+            <div class="res-icon">🔢</div>
+            <div>
+              <h4>CP Algorithms</h4>
+              <p>Competitive programming algorithms</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Web Development -->
+      <div class="resource-category fade-in">
+        <h3><span>🌐</span> Web Development</h3>
+        <div class="resource-list">
+          <a href="https://developer.mozilla.org/" target="_blank" class="resource-item">
+            <div class="res-icon">📖</div>
+            <div>
+              <h4>MDN Web Docs</h4>
+              <p>HTML, CSS, JS complete reference</p>
+            </div>
+          </a>
+          <a href="https://react.dev/" target="_blank" class="resource-item">
+            <div class="res-icon">⚛️</div>
+            <div>
+              <h4>React.dev</h4>
+              <p>Official React documentation</p>
+            </div>
+          </a>
+          <a href="https://nodejs.org/en/docs/" target="_blank" class="resource-item">
+            <div class="res-icon">🟢</div>
+            <div>
+              <h4>Node.js Docs</h4>
+              <p>Server-side JavaScript platform</p>
+            </div>
+          </a>
+          <a href="https://css-tricks.com/" target="_blank" class="resource-item">
+            <div class="res-icon">🎨</div>
+            <div>
+              <h4>CSS-Tricks</h4>
+              <p>Tips, tricks, and tutorials for CSS</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Machine Learning -->
+      <div class="resource-category fade-in">
+        <h3><span>🤖</span> Machine Learning & AI</h3>
+        <div class="resource-list">
+          <a href="https://www.coursera.org/learn/machine-learning" target="_blank" class="resource-item">
+            <div class="res-icon">🎓</div>
+            <div>
+              <h4>Andrew Ng's ML Course</h4>
+              <p>Stanford's famous ML course on Coursera</p>
+            </div>
+          </a>
+          <a href="https://scikit-learn.org/" target="_blank" class="resource-item">
+            <div class="res-icon">📈</div>
+            <div>
+              <h4>scikit-learn</h4>
+              <p>Python ML library documentation</p>
+            </div>
+          </a>
+          <a href="https://www.tensorflow.org/tutorials" target="_blank" class="resource-item">
+            <div class="res-icon">🧠</div>
+            <div>
+              <h4>TensorFlow Tutorials</h4>
+              <p>Deep learning with TensorFlow</p>
+            </div>
+          </a>
+          <a href="https://www.kaggle.com/learn" target="_blank" class="resource-item">
+            <div class="res-icon">📊</div>
+            <div>
+              <h4>Kaggle Learn</h4>
+              <p>Free hands-on ML micro-courses</p>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <!-- Developer Tools -->
+      <div class="resource-category fade-in">
+        <h3><span>🛠️</span> Developer Tools</h3>
+        <div class="resource-list">
+          <a href="https://code.visualstudio.com/" target="_blank" class="resource-item">
+            <div class="res-icon">💻</div>
+            <div>
+              <h4>VS Code</h4>
+              <p>Free & powerful code editor</p>
+            </div>
+          </a>
+          <a href="https://github.com/" target="_blank" class="resource-item">
+            <div class="res-icon">🐙</div>
+            <div>
+              <h4>GitHub</h4>
+              <p>Code hosting & collaboration platform</p>
+            </div>
+          </a>
+          <a href="https://replit.com/" target="_blank" class="resource-item">
+            <div class="res-icon">⚡</div>
+            <div>
+              <h4>Replit</h4>
+              <p>Code & run in your browser, instantly</p>
+            </div>
+          </a>
+          <a href="https://www.figma.com/" target="_blank" class="resource-item">
+            <div class="res-icon">🖌️</div>
+            <div>
+              <h4>Figma</h4>
+              <p>UI/UX design & prototyping tool</p>
+            </div>
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Your personal dashboard at RIT CodingHub – track progress, stats, and upcoming events.">
+  <title>Dashboard – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div><span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+          href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a><a href="projects.html">Projects</a><a
+          href="community.html">Community</a><a href="resources.html">Resources</a><a href="dashboard.html"
+          class="active">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search"><i class="fas fa-search search-icon"></i><input type="text" id="searchInput"
+            placeholder="Search topics..." autocomplete="off"></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-tachometer-alt"></i> My Dashboard</h1>
+      <p>Track your coding progress and stay on top of your goals.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <!-- Welcome Banner -->
+      <div class="content-block mb-3 fade-in" style="background: var(--gradient-hero); color:#fff; border:none;">
+        <div class="flex items-center gap-3" style="flex-wrap:wrap;">
+          <div class="student-avatar" style="width:64px;height:64px;font-size:1.5rem;" id="dashAvatar">ST</div>
+          <div>
+            <h2 style="color:#fff; font-size:1.4rem;" id="dashWelcome">Welcome, Student!</h2>
+            <p style="color:rgba(255,255,255,0.7); margin:0;" id="dashSubtitle">Keep up the great work. You're doing
+              amazing!</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Stat Cards -->
+      <div class="dashboard-grid fade-in">
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(0,200,83,0.12); color:var(--primary);"><i
+              class="fas fa-check-circle"></i></div>
+          <div class="stat-value" id="statSolved">12</div>
+          <div class="stat-label">Problems Solved</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(41,121,255,0.12); color:var(--secondary);"><i
+              class="fas fa-star"></i></div>
+          <div class="stat-value" id="statPoints">480</div>
+          <div class="stat-label">Points Earned</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(255,179,0,0.12); color:#ffb300;"><i class="fas fa-trophy"></i>
+          </div>
+          <div class="stat-value" id="statRank">#15</div>
+          <div class="stat-label">Leaderboard Rank</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon" style="background:rgba(156,39,176,0.12); color:#9c27b0;"><i class="fas fa-fire"></i>
+          </div>
+          <div class="stat-value" id="statStreak">5</div>
+          <div class="stat-label">Day Streak</div>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div>
+          <!-- Learning Progress -->
+          <div class="progress-section fade-in">
+            <h3><i class="fas fa-chart-line"></i> Learning Progress</h3>
+            <div class="progress-item">
+              <div class="progress-label"><span>Beginner Programming</span><span>75%</span></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:75%;"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Data Structures & Algorithms</span><span>40%</span></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:40%;"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Frontend Development</span><span>60%</span></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:60%;"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Backend Development</span><span>20%</span></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:20%;"></div>
+              </div>
+            </div>
+            <div class="progress-item">
+              <div class="progress-label"><span>Machine Learning</span><span>10%</span></div>
+              <div class="progress-bar">
+                <div class="progress-fill" style="width:10%;"></div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="content-block fade-in">
+            <h3 style="font-weight:700; margin-bottom:16px;"><i class="fas fa-clock"></i> Recent Activity</h3>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div
+                style="display:flex; align-items:center; gap:12px; padding:12px; background:var(--bg-secondary); border-radius:var(--radius-sm);">
+                <div
+                  style="width:36px;height:36px;border-radius:50%;background:rgba(0,200,83,0.12);display:flex;align-items:center;justify-content:center;color:var(--primary);">
+                  <i class="fas fa-check"></i></div>
+                <div><strong>Solved "Two Sum"</strong><br><small style="color:var(--text-tertiary);">Today at 4:30
+                    PM</small></div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:12px; padding:12px; background:var(--bg-secondary); border-radius:var(--radius-sm);">
+                <div
+                  style="width:36px;height:36px;border-radius:50%;background:rgba(41,121,255,0.12);display:flex;align-items:center;justify-content:center;color:var(--secondary);">
+                  <i class="fas fa-book"></i></div>
+                <div><strong>Completed "CSS Styling" Module</strong><br><small style="color:var(--text-tertiary);">Today
+                    at 2:15 PM</small></div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:12px; padding:12px; background:var(--bg-secondary); border-radius:var(--radius-sm);">
+                <div
+                  style="width:36px;height:36px;border-radius:50%;background:rgba(255,179,0,0.12);display:flex;align-items:center;justify-content:center;color:#ffb300;">
+                  <i class="fas fa-calendar-check"></i></div>
+                <div><strong>Registered for "RIT Hackathon 2026"</strong><br><small
+                    style="color:var(--text-tertiary);">Yesterday at 6:00 PM</small></div>
+              </div>
+              <div
+                style="display:flex; align-items:center; gap:12px; padding:12px; background:var(--bg-secondary); border-radius:var(--radius-sm);">
+                <div
+                  style="width:36px;height:36px;border-radius:50%;background:rgba(156,39,176,0.12);display:flex;align-items:center;justify-content:center;color:#9c27b0;">
+                  <i class="fas fa-medal"></i></div>
+                <div><strong>Earned "First Streak" Badge 🔥</strong><br><small style="color:var(--text-tertiary);">2
+                    days ago</small></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div>
+          <!-- Upcoming Events -->
+          <div class="content-block fade-in">
+            <h3 style="font-weight:700; margin-bottom:16px;"><i class="fas fa-calendar-alt"></i> Upcoming Events</h3>
+            <div style="display:flex; flex-direction:column; gap:12px;">
+              <div
+                style="padding:14px; border-left:3px solid var(--primary); background:var(--bg-secondary); border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                <strong>Weekly Coding Contest #12</strong>
+                <div style="font-size:0.8rem; color:var(--text-tertiary); margin-top:4px;"><i
+                    class="fas fa-calendar"></i> March 20, 2026 • 6:00 PM</div>
+              </div>
+              <div
+                style="padding:14px; border-left:3px solid var(--secondary); background:var(--bg-secondary); border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                <strong>React.js Workshop</strong>
+                <div style="font-size:0.8rem; color:var(--text-tertiary); margin-top:4px;"><i
+                    class="fas fa-calendar"></i> March 25, 2026 • 2:00 PM</div>
+              </div>
+              <div
+                style="padding:14px; border-left:3px solid #ffb300; background:var(--bg-secondary); border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                <strong>Career in AI/ML Seminar</strong>
+                <div style="font-size:0.8rem; color:var(--text-tertiary); margin-top:4px;"><i
+                    class="fas fa-calendar"></i> March 28, 2026 • 10:00 AM</div>
+              </div>
+              <div
+                style="padding:14px; border-left:3px solid #9c27b0; background:var(--bg-secondary); border-radius:0 var(--radius-sm) var(--radius-sm) 0;">
+                <strong>RIT Hackathon 2026</strong>
+                <div style="font-size:0.8rem; color:var(--text-tertiary); margin-top:4px;"><i
+                    class="fas fa-calendar"></i> April 5–6, 2026 • 9:00 AM</div>
+              </div>
+            </div>
+            <a href="events.html" class="btn btn-secondary btn-sm mt-2" style="width:100%;justify-content:center;">View
+              All Events</a>
+          </div>
+
+          <!-- Quick Links -->
+          <div class="content-block fade-in">
+            <h3 style="font-weight:700; margin-bottom:16px;"><i class="fas fa-bolt"></i> Quick Actions</h3>
+            <div style="display:flex; flex-direction:column; gap:8px;">
+              <a href="practice.html" class="btn btn-secondary btn-sm" style="justify-content:flex-start;"><i
+                  class="fas fa-code"></i> Solve Problems</a>
+              <a href="learning.html" class="btn btn-secondary btn-sm" style="justify-content:flex-start;"><i
+                  class="fas fa-book"></i> Continue Learning</a>
+              <a href="leaderboard.html" class="btn btn-secondary btn-sm" style="justify-content:flex-start;"><i
+                  class="fas fa-trophy"></i> View Leaderboard</a>
+              <a href="community.html" class="btn btn-secondary btn-sm" style="justify-content:flex-start;"><i
+                  class="fas fa-comments"></i> Join Discussion</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Login to RIT CodingHub with your college email or register number.">
+  <title>Login – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- ===== Navbar ===== -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="learning.html">Learning Paths</a>
+        <a href="practice.html">Practice</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="events.html">Events</a>
+        <a href="projects.html">Projects</a>
+        <a href="community.html">Community</a>
+        <a href="resources.html">Resources</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode">
+          <i class="fas fa-moon"></i>
+        </button>
+        <button class="hamburger" id="hamburger" aria-label="Menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== Login Form ===== -->
+  <section class="login-page">
+    <div class="login-container" id="loginContainer">
+      <div class="login-logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+      </div>
+
+      <!-- Login Form -->
+      <div id="loginForm">
+        <h2>Welcome Back</h2>
+        <p class="login-subtitle">Sign in with your college email or register number</p>
+
+        <div class="login-error" id="loginError"></div>
+        <div class="login-success" id="loginSuccess"></div>
+
+        <div class="form-group">
+          <label for="loginId">College Email / Register Number</label>
+          <input type="text" id="loginId" placeholder="e.g. bharanidharan.240050@cse.ritchennai.edu.in">
+        </div>
+
+        <div class="form-group">
+          <label for="loginPassword">Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="loginPassword" placeholder="Enter your password">
+            <button class="toggle-password" id="togglePassword" type="button" aria-label="Toggle password visibility">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="login-btn" id="loginBtn" type="button">
+          <i class="fas fa-sign-in-alt"></i> Sign In
+        </button>
+
+        <p class="text-center mt-2" style="font-size:0.85rem; color:var(--text-tertiary);">
+          Default password: <strong>Team CoCo</strong>
+        </p>
+      </div>
+
+      <!-- Change Password Form -->
+      <div id="changePasswordForm" style="display:none;">
+        <h2>Change Password</h2>
+        <p class="login-subtitle">Create a new secure password for your account</p>
+
+        <div class="login-error" id="cpError"></div>
+        <div class="login-success" id="cpSuccess"></div>
+
+        <div class="form-group">
+          <label for="cpCurrentPassword">Current Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="cpCurrentPassword" placeholder="Enter current password">
+            <button class="toggle-password" type="button" onclick="togglePwField('cpCurrentPassword', this)"
+              aria-label="Toggle">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cpNewPassword">New Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="cpNewPassword" placeholder="Enter new password">
+            <button class="toggle-password" type="button" onclick="togglePwField('cpNewPassword', this)"
+              aria-label="Toggle">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <div class="form-group">
+          <label for="cpConfirmPassword">Confirm New Password</label>
+          <div class="input-wrapper">
+            <input type="password" id="cpConfirmPassword" placeholder="Confirm new password">
+            <button class="toggle-password" type="button" onclick="togglePwField('cpConfirmPassword', this)"
+              aria-label="Toggle">
+              <i class="fas fa-eye"></i>
+            </button>
+          </div>
+        </div>
+
+        <button class="login-btn" id="changePasswordBtn" type="button">
+          <i class="fas fa-key"></i> Update Password
+        </button>
+
+        <button class="btn btn-secondary mt-2" style="width:100%;" onclick="showLoginForm()">
+          <i class="fas fa-arrow-left"></i> Back to Login
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <script src="js/script.js"></script>
+  <script>
+    // Initialize login page
+    document.addEventListener('DOMContentLoaded', function () {
+      initLoginPage();
+    });
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Campus leaderboard – see top coders at RIT CodingHub.">
+  <title>Leaderboard – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="learning.html">Learning Paths</a>
+        <a href="practice.html">Practice</a>
+        <a href="leaderboard.html" class="active">Leaderboard</a>
+        <a href="events.html">Events</a>
+        <a href="projects.html">Projects</a>
+        <a href="community.html">Community</a>
+        <a href="resources.html">Resources</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search topics..." autocomplete="off">
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-trophy"></i> Campus Leaderboard</h1>
+      <p>See who's leading the coding game at RIT!</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container" style="max-width: 960px;">
+      <!-- Top 3 Cards -->
+      <div class="cards-grid mb-4" style="grid-template-columns: repeat(3, 1fr);">
+        <div class="card fade-in"
+          style="text-align:center; border-color: #ffd700; background: linear-gradient(145deg, rgba(255,215,0,0.05), var(--bg-card));">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🥇</div>
+          <div class="student-avatar" style="width:56px;height:56px;font-size:1.2rem;margin:0 auto 12px;">AK</div>
+          <h3>Arun Kumar</h3>
+          <p style="font-size:0.85rem; margin-bottom:8px;">CSE – 3rd Year</p>
+          <div style="font-size:1.8rem; font-weight:800; color: var(--primary);">2450</div>
+          <div style="font-size:0.8rem; color:var(--text-tertiary);">points</div>
+          <div class="student-badges mt-2" style="justify-content:center;">
+            <span>🏆</span><span>⚡</span><span>🔥</span><span>💎</span>
+          </div>
+        </div>
+        <div class="card fade-in"
+          style="text-align:center; border-color: #c0c0c0; background: linear-gradient(145deg, rgba(192,192,192,0.05), var(--bg-card));">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🥈</div>
+          <div class="student-avatar" style="width:56px;height:56px;font-size:1.2rem;margin:0 auto 12px;">SP</div>
+          <h3>Sneha Priya</h3>
+          <p style="font-size:0.85rem; margin-bottom:8px;">IT – 3rd Year</p>
+          <div style="font-size:1.8rem; font-weight:800; color: var(--primary);">2280</div>
+          <div style="font-size:0.8rem; color:var(--text-tertiary);">points</div>
+          <div class="student-badges mt-2" style="justify-content:center;">
+            <span>🏆</span><span>⚡</span><span>🔥</span>
+          </div>
+        </div>
+        <div class="card fade-in"
+          style="text-align:center; border-color: #cd7f32; background: linear-gradient(145deg, rgba(205,127,50,0.05), var(--bg-card));">
+          <div style="font-size:2.5rem; margin-bottom:12px;">🥉</div>
+          <div class="student-avatar" style="width:56px;height:56px;font-size:1.2rem;margin:0 auto 12px;">RV</div>
+          <h3>Rahul Vijay</h3>
+          <p style="font-size:0.85rem; margin-bottom:8px;">CSE – 2nd Year</p>
+          <div style="font-size:1.8rem; font-weight:800; color: var(--primary);">2100</div>
+          <div style="font-size:0.8rem; color:var(--text-tertiary);">points</div>
+          <div class="student-badges mt-2" style="justify-content:center;">
+            <span>🏆</span><span>⚡</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Full Table -->
+      <div class="content-block" style="padding:0; overflow-x:auto;">
+        <table class="leaderboard-table">
+          <thead>
+            <tr>
+              <th>Rank</th>
+              <th>Student</th>
+              <th>Problems Solved</th>
+              <th>Points</th>
+              <th>Badges</th>
+            </tr>
+          </thead>
+          <tbody id="leaderboardBody">
+            <tr class="rank-1">
+              <td><span class="rank-badge" style="background:var(--gradient-gold);">1</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">AK</div>
+                  <div><strong>Arun Kumar</strong><br><small style="color:var(--text-tertiary)">CSE – 3rd Year</small>
+                  </div>
+                </div>
+              </td>
+              <td><strong>156</strong></td>
+              <td><strong>2450</strong></td>
+              <td>
+                <div class="student-badges"><span>🏆</span><span>⚡</span><span>🔥</span><span>💎</span></div>
+              </td>
+            </tr>
+            <tr class="rank-2">
+              <td><span class="rank-badge" style="background:var(--gradient-silver);">2</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">SP</div>
+                  <div><strong>Sneha Priya</strong><br><small style="color:var(--text-tertiary)">IT – 3rd Year</small>
+                  </div>
+                </div>
+              </td>
+              <td><strong>142</strong></td>
+              <td><strong>2280</strong></td>
+              <td>
+                <div class="student-badges"><span>🏆</span><span>⚡</span><span>🔥</span></div>
+              </td>
+            </tr>
+            <tr class="rank-3">
+              <td><span class="rank-badge" style="background:var(--gradient-bronze);">3</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">RV</div>
+                  <div><strong>Rahul Vijay</strong><br><small style="color:var(--text-tertiary)">CSE – 2nd Year</small>
+                  </div>
+                </div>
+              </td>
+              <td><strong>131</strong></td>
+              <td><strong>2100</strong></td>
+              <td>
+                <div class="student-badges"><span>🏆</span><span>⚡</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">4</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">DM</div>
+                  <div><strong>Deepika Mohan</strong><br><small style="color:var(--text-tertiary)">ECE – 3rd
+                      Year</small></div>
+                </div>
+              </td>
+              <td>118</td>
+              <td>1920</td>
+              <td>
+                <div class="student-badges"><span>⚡</span><span>🔥</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">5</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">KS</div>
+                  <div><strong>Karthik Subramani</strong><br><small style="color:var(--text-tertiary)">CSE – 4th
+                      Year</small></div>
+                </div>
+              </td>
+              <td>105</td>
+              <td>1750</td>
+              <td>
+                <div class="student-badges"><span>⚡</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">6</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">NR</div>
+                  <div><strong>Nithya Ramesh</strong><br><small style="color:var(--text-tertiary)">IT – 2nd Year</small>
+                  </div>
+                </div>
+              </td>
+              <td>98</td>
+              <td>1580</td>
+              <td>
+                <div class="student-badges"><span>⚡</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">7</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">VG</div>
+                  <div><strong>Vishnu Ganesh</strong><br><small style="color:var(--text-tertiary)">CSE – 2nd
+                      Year</small></div>
+                </div>
+              </td>
+              <td>87</td>
+              <td>1420</td>
+              <td>
+                <div class="student-badges"><span>🔥</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">8</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">PS</div>
+                  <div><strong>Preethi Selvam</strong><br><small style="color:var(--text-tertiary)">AIML – 3rd
+                      Year</small></div>
+                </div>
+              </td>
+              <td>76</td>
+              <td>1240</td>
+              <td>
+                <div class="student-badges"><span>🔥</span></div>
+              </td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">9</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">MJ</div>
+                  <div><strong>Manoj Jayaram</strong><br><small style="color:var(--text-tertiary)">CSE – 3rd
+                      Year</small></div>
+                </div>
+              </td>
+              <td>64</td>
+              <td>1080</td>
+              <td></td>
+            </tr>
+            <tr>
+              <td><span style="font-weight:700;color:var(--text-secondary);">10</span></td>
+              <td>
+                <div class="student-info">
+                  <div class="student-avatar">AS</div>
+                  <div><strong>Ananya Sharma</strong><br><small style="color:var(--text-tertiary)">IT – 4th Year</small>
+                  </div>
+                </div>
+              </td>
+              <td>58</td>
+              <td>960</td>
+              <td></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

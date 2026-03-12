@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="Explore structured learning paths in programming, data structures, web development, and machine learning at RIT CodingHub.">
+  <title>Learning Paths – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div>
+        <span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a>
+        <a href="learning.html" class="active">Learning Paths</a>
+        <a href="practice.html">Practice</a>
+        <a href="leaderboard.html">Leaderboard</a>
+        <a href="events.html">Events</a>
+        <a href="projects.html">Projects</a>
+        <a href="community.html">Community</a>
+        <a href="resources.html">Resources</a>
+        <a href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search">
+          <i class="fas fa-search search-icon"></i>
+          <input type="text" id="searchInput" placeholder="Search topics..." autocomplete="off">
+        </div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Page Hero -->
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-road"></i> Learning Paths</h1>
+      <p>Choose a path and master coding step by step.</p>
+    </div>
+  </section>
+
+  <!-- Courses List View -->
+  <section class="page-content" id="coursesListView">
+    <div class="container">
+      <div class="filter-tabs mb-3">
+        <button class="filter-tab active" data-filter="all">All Courses</button>
+        <button class="filter-tab" data-filter="beginner">Beginner</button>
+        <button class="filter-tab" data-filter="intermediate">Intermediate</button>
+        <button class="filter-tab" data-filter="advanced">Advanced</button>
+      </div>
+
+      <div class="cards-grid" id="coursesGrid">
+        <!-- Beginner Programming -->
+        <div class="card course-card fade-in" data-level="beginner" data-course="beginner">
+          <span class="badge badge-beginner course-badge">Beginner</span>
+          <div class="card-icon"><i class="fas fa-laptop-code"></i></div>
+          <h3>Beginner Programming</h3>
+          <p>Start your coding journey with fundamental concepts — variables, loops, and functions.</p>
+          <ul class="modules-list">
+            <li>Module 1 – Variables & Data Types</li>
+            <li>Module 2 – Loops & Conditions</li>
+            <li>Module 3 – Functions</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openCourse('beginner')">Start Learning <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- DSA -->
+        <div class="card course-card fade-in" data-level="intermediate" data-course="dsa">
+          <span class="badge badge-intermediate course-badge">Intermediate</span>
+          <div class="card-icon"><i class="fas fa-project-diagram"></i></div>
+          <h3>Data Structures & Algorithms</h3>
+          <p>Master the essential data structures and algorithmic problem-solving techniques.</p>
+          <ul class="modules-list">
+            <li>Module 1 – Arrays & Strings</li>
+            <li>Module 2 – Linked Lists & Stacks</li>
+            <li>Module 3 – Trees & Graphs</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openCourse('dsa')">Start Learning <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Frontend -->
+        <div class="card course-card fade-in" data-level="beginner" data-course="frontend">
+          <span class="badge badge-beginner course-badge">Beginner</span>
+          <div class="card-icon"><i class="fas fa-palette"></i></div>
+          <h3>Frontend Development</h3>
+          <p>Build beautiful, responsive websites using HTML, CSS, and JavaScript.</p>
+          <ul class="modules-list">
+            <li>Module 1 – HTML Basics</li>
+            <li>Module 2 – CSS Styling</li>
+            <li>Module 3 – JavaScript Fundamentals</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openCourse('frontend')">Start Learning <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- Backend -->
+        <div class="card course-card fade-in" data-level="intermediate" data-course="backend">
+          <span class="badge badge-intermediate course-badge">Intermediate</span>
+          <div class="card-icon"><i class="fas fa-server"></i></div>
+          <h3>Backend Development</h3>
+          <p>Learn server-side programming, databases, and REST API development.</p>
+          <ul class="modules-list">
+            <li>Module 1 – Node.js Basics</li>
+            <li>Module 2 – Databases</li>
+            <li>Module 3 – REST APIs</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openCourse('backend')">Start Learning <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+        <!-- ML -->
+        <div class="card course-card fade-in" data-level="advanced" data-course="ml">
+          <span class="badge badge-advanced course-badge">Advanced</span>
+          <div class="card-icon"><i class="fas fa-brain"></i></div>
+          <h3>Machine Learning</h3>
+          <p>Dive into AI and machine learning with Python, regression models, and neural networks.</p>
+          <ul class="modules-list">
+            <li>Module 1 – Python for ML</li>
+            <li>Module 2 – Regression Models</li>
+            <li>Module 3 – Neural Networks</li>
+          </ul>
+          <button class="btn btn-primary btn-sm" onclick="openCourse('ml')">Start Learning <i
+              class="fas fa-arrow-right"></i></button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Module Content View (shown when a course is opened) -->
+  <section class="module-content" id="moduleView" style="display:none;">
+    <div class="module-breadcrumb">
+      <a href="learning.html">Learning Paths</a> <i class="fas fa-chevron-right"></i> <span id="courseName"></span>
+    </div>
+    <div class="module-header">
+      <h1 id="courseTitle"></h1>
+      <p id="courseDescription"></p>
+    </div>
+
+    <!-- Module Tabs -->
+    <div class="filter-tabs mb-3" id="moduleTabs"></div>
+
+    <!-- Module Content Area -->
+    <div id="moduleContentArea"></div>
+
+    <div class="mt-4">
+      <button class="btn btn-secondary" onclick="backToCourses()"><i class="fas fa-arrow-left"></i> Back to
+        Courses</button>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4>
+          <a href="learning.html">Learning Paths</a>
+          <a href="practice.html">Practice</a>
+          <a href="leaderboard.html">Leaderboard</a>
+          <a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4>
+          <a href="community.html">Discussions</a>
+          <a href="projects.html">Projects</a>
+          <a href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4>
+          <a href="#">RIT Chennai</a>
+          <a href="#">CSE Department</a>
+          <a href="#">Contact Us</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+
+</html>

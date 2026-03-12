@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Student project showcase at RIT CodingHub.">
+  <title>Projects – RIT CodingHub</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+</head>
+
+<body>
+  <nav class="navbar" id="navbar">
+    <div class="container">
+      <a href="index.html" class="nav-logo">
+        <div class="logo-icon">&lt;/&gt;</div><span class="logo-text">RIT CodingHub</span>
+      </a>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Home</a><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+          href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a><a href="projects.html"
+          class="active">Projects</a><a href="community.html">Community</a><a href="resources.html">Resources</a><a
+          href="dashboard.html">Dashboard</a>
+      </div>
+      <div class="nav-right">
+        <div class="nav-search"><i class="fas fa-search search-icon"></i><input type="text" id="searchInput"
+            placeholder="Search topics..." autocomplete="off"></div>
+        <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark mode"><i class="fas fa-moon"></i></button>
+        <a href="login.html" class="nav-login-btn" id="navLoginBtn">Login</a>
+        <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <h1><i class="fas fa-folder-open"></i> Student Projects</h1>
+      <p>Explore and showcase amazing projects built by RIT students.</p>
+    </div>
+  </section>
+
+  <section class="page-content">
+    <div class="container">
+      <!-- Add Project Form -->
+      <div class="form-card mb-4 fade-in">
+        <h3><i class="fas fa-plus-circle"></i> Showcase Your Project</h3>
+        <div class="form-group">
+          <label for="projTitle">Project Title</label>
+          <input type="text" id="projTitle" placeholder="My Awesome Project">
+        </div>
+        <div class="form-group">
+          <label for="projDesc">Description</label>
+          <textarea id="projDesc" placeholder="Describe your project..."></textarea>
+        </div>
+        <div class="form-group">
+          <label for="projTech">Technologies (comma-separated)</label>
+          <input type="text" id="projTech" placeholder="React, Node.js, MongoDB">
+        </div>
+        <div class="form-group">
+          <label for="projGithub">GitHub Link</label>
+          <input type="url" id="projGithub" placeholder="https://github.com/...">
+        </div>
+        <div class="form-group">
+          <label for="projDemo">Demo Link</label>
+          <input type="url" id="projDemo" placeholder="https://...">
+        </div>
+        <button class="btn btn-primary" onclick="addProject()"><i class="fas fa-paper-plane"></i> Submit
+          Project</button>
+      </div>
+
+      <!-- Projects Grid -->
+      <div class="cards-grid" id="projectsGrid">
+        <div class="project-card fade-in">
+          <h3>🌦️ WeatherNow – Real-Time Weather App</h3>
+          <p>A beautiful weather dashboard that shows real-time weather data with animated icons, 5-day forecast, and
+            location-based search.</p>
+          <div class="project-tags">
+            <span>React.js</span><span>OpenWeather API</span><span>CSS3</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>📝 TaskFlow – Project Management Tool</h3>
+          <p>A Kanban-style project management app with drag & drop, team boards, and deadline tracking.</p>
+          <div class="project-tags">
+            <span>Vue.js</span><span>Firebase</span><span>Vuetify</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>🤖 ChatBot AI – Campus Assistant</h3>
+          <p>An AI-powered chatbot that answers campus-related queries using NLP and a knowledge base of FAQs.</p>
+          <div class="project-tags">
+            <span>Python</span><span>Flask</span><span>TensorFlow</span><span>NLP</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>🛒 ShopEasy – E-Commerce Platform</h3>
+          <p>Full-stack e-commerce application with user authentication, cart, payment integration, and admin dashboard.
+          </p>
+          <div class="project-tags">
+            <span>Next.js</span><span>MongoDB</span><span>Stripe</span><span>Tailwind</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>🌱 AgroGuard – Plant Disease Detector</h3>
+          <p>A mobile app that uses image recognition to identify plant diseases and suggest treatments.</p>
+          <div class="project-tags">
+            <span>Flutter</span><span>TensorFlow Lite</span><span>Dart</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+        <div class="project-card fade-in">
+          <h3>📊 DataViz – Interactive Dashboard</h3>
+          <p>A data visualization dashboard with charts, graphs, and real-time data streaming from APIs.</p>
+          <div class="project-tags">
+            <span>D3.js</span><span>Node.js</span><span>WebSocket</span>
+          </div>
+          <div class="project-links">
+            <a href="#" class="github-link"><i class="fab fa-github"></i> GitHub</a>
+            <a href="#" class="demo-link"><i class="fas fa-external-link-alt"></i> Demo</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <h3>&lt;/&gt; RIT CodingHub</h3>
+          <p>The official coding platform for Rajalakshmi Institute of Technology, Chennai.</p>
+        </div>
+        <div class="footer-col">
+          <h4>Platform</h4><a href="learning.html">Learning Paths</a><a href="practice.html">Practice</a><a
+            href="leaderboard.html">Leaderboard</a><a href="events.html">Events</a>
+        </div>
+        <div class="footer-col">
+          <h4>Community</h4><a href="community.html">Discussions</a><a href="projects.html">Projects</a><a
+            href="resources.html">Resources</a>
+        </div>
+        <div class="footer-col">
+          <h4>College</h4><a href="#">RIT Chennai</a><a href="#">CSE Department</a>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2026 RIT CodingHub — Rajalakshmi Institute of Technology, Chennai.</p>
+      </div>
+    </div>
+  </footer>
+  <script src="js/script.js"></script>
+</body>
+
+</html>
